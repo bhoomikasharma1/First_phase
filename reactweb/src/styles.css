@@ -178,10 +178,50 @@ h1 {
   gap: 7px;
 }
 
+.chip a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
 .chip-icon {
   width: 20px;
   height: 20px;
   object-fit: contain;
+}
+
+.contact-line {
+  text-align: center;
+  margin: 5px 0;
+  line-height: 1.35;
+}
+
+.contact-link {
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: var(--accent);
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.contact-link:hover .contact-icon {
+  transform: translateY(-1px);
+  filter: brightness(1.25);
 }
 
 @media (max-width: 768px) {
@@ -194,5 +234,9 @@ h1 {
   .hero {
     min-height: auto;
     padding-top: 30px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
   }
 }
