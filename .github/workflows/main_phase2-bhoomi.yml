@@ -29,14 +29,15 @@ jobs:
         working-directory: reactweb          # ✅ Point to your React folder
         run: |
           npm install
-          npm run build --if-present
+          chmod +x node_modules/.bin/vite    # ✅ Fix: grant execute permission to vite
+          npx vite build                     # ✅ Fix: use npx to run vite directly
           npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: reactweb/build               # ✅ Upload only the build output
+          path: reactweb/dist               # ✅ Vite outputs to 'dist' not 'build'
 
   deploy:
     runs-on: ubuntu-latest
