@@ -1,9 +1,9 @@
 # ✅ Dependencies
-node_modules/
+reactweb/node_modules/
 
 # ✅ Vite build output
-dist/
-dist-ssr/
+reactweb/dist/
+reactweb/dist-ssr/
 
 # ✅ Environment variables — never commit these!
 .env
@@ -48,4 +48,3 @@ coverage/
 # ✅ Optional package manager files
 .yarn/
 .pnp.*
-package-lock.json   # remove this line if you want to commit lock file (recommended to keep it)
