@@ -24,7 +24,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '24.x'
-
+          cache: 'npm'
+          cache-dependency-path: reactweb/package-lock.json  # ✅ Cache based on your React app's lockfile
+          
       - name: npm install, build, and test
         working-directory: reactweb          # ✅ Point to your React folder
         run: |
@@ -37,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: reactweb/dist               # ✅ Vite outputs to 'dist' not 'build'
+          path: reactweb               # ✅ Vite outputs to 'dist' not 'build'
 
   deploy:
     runs-on: ubuntu-latest
